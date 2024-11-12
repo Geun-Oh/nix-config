@@ -17,6 +17,10 @@
     zsh
   ];
 
+  environment.systemPath = [
+    "$HOME/go/bin"
+  ];
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix = {
@@ -63,6 +67,7 @@
       "obsidian"
       # "raycast"
       "cursor"
+      "postman"
     ];
 
     masApps = {
