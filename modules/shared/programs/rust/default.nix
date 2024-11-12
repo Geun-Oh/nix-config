@@ -7,8 +7,11 @@
   };
 
   home.packages = with pkgs; [
-    cargo
     rustc
     rustup
   ];
+
+  programs.bash.initExtra = ''
+    rustup default stable
+  '';
 }
