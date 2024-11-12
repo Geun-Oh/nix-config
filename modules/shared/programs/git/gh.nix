@@ -10,7 +10,7 @@ in
   xdg.configFile = {
     "gh/config.yml".source = yamlFormat.generate "gh-config.yml" ({
       aliases = { };
-      editor = "";
+      editor = "vim";
       git_protocol = "https";
       prompt = "enabled";
       version = "1";
