@@ -11,7 +11,7 @@
   # ];
 
   home.sessionVariables = {
-    GOPATH = "${config.xdg.configHome}/go";
+    GOPATH = "${config.home.homeDirectory}/go";
   };
 
   programs.go.enable = true;
