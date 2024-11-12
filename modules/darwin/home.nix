@@ -101,6 +101,7 @@
         usernamehw.errorlens
         yoavbls.pretty-ts-errors
         ms-vscode.makefile-tools
+        mhutchie.git-graph
       ];
     };
   };
