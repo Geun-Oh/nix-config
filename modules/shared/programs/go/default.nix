@@ -6,15 +6,13 @@
 }:
 
 {
-  imports = [
-    ./gvm.nix
-  ];
+  # imports = [ TODO
+  #   ./gvm.nix
+  # ];
 
   home.sessionVariables = {
     GOPATH = "${config.xdg.configHome}/go";
   };
 
-  home.packages = with pkgs; [
-    go
-  ];
+  programs.go.enable = true;
 }
