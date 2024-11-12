@@ -20,25 +20,42 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.flake-compat.follows = "flake-compat";
+    };
+
   };
 
-  nix-vscode-extensions = {
-    url = "github:nix-community/nix-vscode-extensions";
-    inputs.nixpkgs.follows = "nixpkgs";
-    inputs.flake-utils.follows = "flake-utils";
-    inputs.flake-compat.follows = "flake-compat";
-  };
-
-  outputs =
-    {
+  outputs = inputs @ {
       self,
       nixpkgs,
       nixos-hardware,
       darwin,
       home-manager,
       ...
-    }@inputs:
-    {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
-    };
+    }:
+    let
+      username = "user";
+      system = "aarch64-darwin";
+
+      specialArgs = {
+          inherit inputs username;
+      };
+
+      in {
+        darwinConfigurations = {
+          "user" = darwin.lib.darwinSystem {
+                inherit system specialArgs;
+                modules = [
+                  home-manager.darwinModules.home-manager
+                  ./darwin.nix
+                ];
+          };
+        };
+        formatter.${system} = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+      };
 }

@@ -46,7 +46,7 @@
       inherit inputs;
     };
     users = {
-      "user" = import ./home.nix;
+      "user" = import ./modules/darwin/home.nix;
     };
     useGlobalPkgs = true;
     useUserPackages = true;

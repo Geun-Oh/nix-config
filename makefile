@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	darwin-rebuild switch --flake '.#user'
+	darwin-rebuild switch --flake '.#user' --show-trace
 
 .PHONY: fmt
 fmt:
