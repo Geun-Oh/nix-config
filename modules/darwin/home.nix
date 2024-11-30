@@ -49,6 +49,8 @@
     kubernetes-helm
     minikube
     nodejs_20
+    pnpm
+    typescript
   ];
 
   programs = {
@@ -102,6 +104,8 @@
         yoavbls.pretty-ts-errors
         ms-vscode.makefile-tools
         mhutchie.git-graph
+	adpyke.codesnap
+	gruntfuggly.todo-tree
       ];
     };
   };
