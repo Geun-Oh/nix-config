@@ -68,6 +68,7 @@
       # "raycast"
       "cursor"
       "postman"
+      "zed"
     ];
 
     masApps = {
