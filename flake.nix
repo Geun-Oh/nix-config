@@ -28,6 +28,10 @@
       inputs.flake-compat.follows = "flake-compat";
     };
 
+    terraform = {
+      url = "github:stackbuilders/nixpkgs-terraform";
+    };
+
   };
 
   outputs = inputs @ {
@@ -36,6 +40,7 @@
       nixos-hardware,
       darwin,
       home-manager,
+      terraform,
       ...
     }:
     let
@@ -57,5 +62,8 @@
           };
         };
         formatter.${system} = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+        devShells.default = nixpkgs.legacyPackages.${system}.mkShell {
+          buildInputs = [ terraform.packages.${system}."1.10.1" ];
+        };
       };
 }

@@ -16,7 +16,7 @@
     ../shared/programs/go
     ../shared/programs/gpg
     ../shared/programs/jq
-    # ../shared/programs/kubernetes
+    ../shared/programs/kubernetes
     # ../shared/programs/lsd
     ../shared/programs/nix
     # ../shared/programs/node
@@ -31,7 +31,7 @@
     # ../shared/programs/wezterm
     ../shared/programs/xdg
   ];
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   home.sessionVariables = {
           GOPATH = "${config.home.homeDirectory}/go";
@@ -44,12 +44,7 @@
     act
     tree
     warp-terminal
-    terraform
-    kubectl
-    kubernetes-helm
-    minikube
-    nodejs_20
-    pnpm
+    # terraform
     typescript
   ];
 
