@@ -46,6 +46,7 @@
     warp-terminal
     # terraform
     typescript
+    neovim
   ];
 
   programs = {
