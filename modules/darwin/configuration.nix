@@ -13,7 +13,7 @@
 
   users.users.user = {
     shell = pkgs.bashInteractive;
-    home = "/Users/user";
+    home = "/Users/ohyeong-geun";
   };
 
   environment = {

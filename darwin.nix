@@ -40,9 +40,9 @@
     };
   };
 
-  users.users.user = {
+  users.users.ohyeong-geun = {
     shell = pkgs.bashInteractive;
-    home = "/Users/user";
+    home = "/Users/ohyeong-geun";
   };
 
   home-manager = {
@@ -50,7 +50,7 @@
       inherit inputs;
     };
     users = {
-      "user" = import ./modules/darwin/home.nix;
+      "ohyeong-geun" = import ./modules/darwin/home.nix;
     };
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -65,10 +65,13 @@
 
     casks = [
       "obsidian"
-      # "raycast"
+      "raycast"
       "cursor"
       "postman"
-      "zed"
+      "warp"
+      "cloudflare-warp"
+      "arc"
+      "slack"
     ];
 
     masApps = {

@@ -44,7 +44,7 @@
       ...
     }:
     let
-      username = "user";
+      username = "ohyeong-geun";
       system = "aarch64-darwin";
 
       specialArgs = {
@@ -53,7 +53,7 @@
 
       in {
         darwinConfigurations = {
-          "user" = darwin.lib.darwinSystem {
+          "ohyeong-geun" = darwin.lib.darwinSystem {
                 inherit system specialArgs;
                 modules = [
                   home-manager.darwinModules.home-manager
