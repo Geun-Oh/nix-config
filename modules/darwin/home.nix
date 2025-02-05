@@ -100,8 +100,9 @@
         yoavbls.pretty-ts-errors
         ms-vscode.makefile-tools
         mhutchie.git-graph
-	adpyke.codesnap
-	gruntfuggly.todo-tree
+        adpyke.codesnap
+        gruntfuggly.todo-tree
+        biomejs.biome
       ];
     };
   };
