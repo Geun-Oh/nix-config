@@ -13,11 +13,9 @@ in
   home.packages =
     with pkgs;
     [
-      podman
-      podman-compose
-      qemu
-      docker
-      docker-compose
+    # podman
+    # podman-compose
+    # qemu
     ];
     # ++ lib.optionals isDarwin [ orbstack ]
     # ++ lib.optionals isLinux [

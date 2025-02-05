@@ -20,6 +20,7 @@
 
   environment.systemPath = [
     "$HOME/go/bin"
+    "$HOME/.cargo/bin"
   ];
 
   # Auto upgrade nix package and the daemon service.
