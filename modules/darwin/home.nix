@@ -26,6 +26,7 @@
     ../shared/programs/ssh
     ../shared/programs/terraform
     ../shared/programs/tmux
+    # ../shared/programs/vim
     # ../shared/programs/vercel
     # ../shared/programs/vscode
     # ../shared/programs/wezterm
@@ -71,7 +72,6 @@
           "deno"
         ];
       };
-
     };
 
     vscode = {
@@ -107,5 +107,10 @@
         biomejs.biome
       ];
     };
+
+    bash.initExtra = ''
+      rustup default stable
+      git clone https://github.com/NvChad/starter ~/.config/nvim
+    '';
   };
 }
