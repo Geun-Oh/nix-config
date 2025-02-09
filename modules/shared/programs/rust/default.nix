@@ -13,5 +13,6 @@
 
   programs.bash.initExtra = ''
     rustup default stable
+    git clone https://github.com/NvChad/starter ~/.config/nvim
   '';
 }
