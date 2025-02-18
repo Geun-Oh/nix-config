@@ -65,6 +65,11 @@
   homebrew = {
     enable = true;
 
+    brews = [
+      "zig"
+      "ripgrep"
+    ];
+
     casks = [
       "obsidian"
       "raycast"

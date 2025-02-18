@@ -60,6 +60,9 @@
       syntaxHighlighting.highlighters = [
         "main"
       ];
+      initExtra = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";
@@ -105,12 +108,8 @@
         adpyke.codesnap
         gruntfuggly.todo-tree
         biomejs.biome
+        ziglang.vscode-zig
       ];
     };
-
-    bash.initExtra = ''
-      rustup default stable
-      git clone https://github.com/NvChad/starter ~/.config/nvim
-    '';
   };
 }
