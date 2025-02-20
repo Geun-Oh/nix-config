@@ -71,6 +71,7 @@
     ];
 
     casks = [
+      "orbstack"
       "obsidian"
       "raycast"
       "cursor"
