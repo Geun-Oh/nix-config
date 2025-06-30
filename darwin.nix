@@ -21,10 +21,11 @@
   environment.systemPath = [
     "$HOME/go/bin"
     "$HOME/.cargo/bin"
+    "$HOME/.npm-global/bin"
   ];
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
   nix = {
     package = pkgs.nix;
     settings = {
@@ -67,6 +68,7 @@
 
     brews = [
       "zig"
+      "hugo"
       "ripgrep"
     ];
 
@@ -80,6 +82,8 @@
       "cloudflare-warp"
       "arc"
       "slack"
+      "google-chrome"
+      "background-music"
     ];
 
     masApps = {

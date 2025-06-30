@@ -41,7 +41,6 @@
   home.packages = with pkgs; [
     curl
     bat
-    hugo
     act
     tree
     warp-terminal
@@ -50,6 +49,10 @@
     terraform
     typescript
     neovim
+    sbt
+    scala
+    codebuff
+    nest-cli
   ];
 
   programs = {
@@ -79,9 +82,7 @@
 
     vscode = {
       enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        equinusocio.vsc-material-theme
-        equinusocio.vsc-material-theme-icons
+      profiles.default.extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         yzhang.markdown-all-in-one
         bierner.markdown-preview-github-styles
