@@ -83,7 +83,6 @@
       "arc"
       "slack"
       "google-chrome"
-      "background-music"
     ];
 
     masApps = {

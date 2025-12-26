@@ -53,6 +53,7 @@
     scala
     codebuff
     nest-cli
+    uv
   ];
 
   programs = {
