@@ -61,7 +61,7 @@
           };
         };
         formatter.${system} = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
-        devShells.default = nixpkgs.legacyPackages.${system}.mkShell {
+        devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
           buildInputs = [ terraform.packages.${system}."1.10.1" ];
         };
       };
