@@ -4,12 +4,14 @@
   environment.systemPackages = with pkgs; [
     zsh
     biome
+    pandoc
   ];
 
   environment.systemPath = [
     "$HOME/go/bin"
     "$HOME/.cargo/bin"
     "$HOME/.npm-global/bin"
+    "$HOME/.local/bin"
   ];
 
   nix = {
@@ -31,5 +33,6 @@
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
+  system.primaryUser = "ohyeong-geun";
   system.stateVersion = 5;
 }
