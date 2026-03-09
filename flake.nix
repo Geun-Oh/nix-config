@@ -24,7 +24,6 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     terraform = {
@@ -33,7 +32,8 @@
 
   };
 
-  outputs = inputs @ {
+  outputs =
+    inputs@{
       self,
       nixpkgs,
       nixos-hardware,
@@ -47,22 +47,23 @@
       system = "aarch64-darwin";
 
       specialArgs = {
-          inherit inputs username;
+        inherit inputs username;
       };
 
-      in {
-        darwinConfigurations = {
-          "ohyeong-geun" = darwin.lib.darwinSystem {
-                inherit system specialArgs;
-                modules = [
-                  home-manager.darwinModules.home-manager
-                  ./darwin.nix
-                ];
-          };
-        };
-        formatter.${system} = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
-        devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
-          buildInputs = [ terraform.packages.${system}."1.10.1" ];
+    in
+    {
+      darwinConfigurations = {
+        "ohyeong-geun" = darwin.lib.darwinSystem {
+          inherit system specialArgs;
+          modules = [
+            home-manager.darwinModules.home-manager
+            ./darwin.nix
+          ];
         };
       };
+      formatter.${system} = nixpkgs.legacyPackages.aarch64-darwin.nixfmt;
+      devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
+        buildInputs = [ terraform.packages.${system}."1.10.1" ];
+      };
+    };
 }
