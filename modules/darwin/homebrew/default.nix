@@ -17,6 +17,7 @@
       "cursor"
       "postman"
       "warp"
+      "claude-code"
       "cloudflare-warp"
       "arc"
       "slack"
