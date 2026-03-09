@@ -17,6 +17,7 @@
       strings = "0;32";
       arrays = "0;37";
       objects = "0;37";
+      objectKeys = "0;37";
     };
   };
 }
