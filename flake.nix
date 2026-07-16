@@ -46,6 +46,9 @@
       username = "ohyeong-geun";
       system = "aarch64-darwin";
 
+      linuxUsername = "ec2-user";
+      linuxSystem = "x86_64-linux";
+
       specialArgs = {
         inherit inputs username;
       };
@@ -61,7 +64,27 @@
           ];
         };
       };
-      formatter.${system} = nixpkgs.legacyPackages.aarch64-darwin.nixfmt;
+
+      # Standalone home-manager for Linux hosts:
+      #   home-manager switch --flake '.#ec2-user'
+      homeConfigurations = {
+        "${linuxUsername}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = linuxSystem;
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = {
+            inherit inputs;
+            username = linuxUsername;
+          };
+          modules = [ ./modules/linux/home.nix ];
+        };
+      };
+
+      formatter = {
+        ${system} = nixpkgs.legacyPackages.${system}.nixfmt;
+        ${linuxSystem} = nixpkgs.legacyPackages.${linuxSystem}.nixfmt;
+      };
       devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
         buildInputs = [ terraform.packages.${system}."1.10.1" ];
       };
